@@ -2,7 +2,7 @@ package sgf_test
 
 import (
 	"fmt"
-	"github.com/blakki/sgf"
+	"github.com/toikarin/sgf"
 )
 
 func ExampleParseSgfFile() {
