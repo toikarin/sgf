@@ -3,6 +3,7 @@ package sgf
 import (
 	"bytes"
 	"io/ioutil"
+	"strings"
 )
 
 //
@@ -333,7 +334,9 @@ func appendGameTree(buffer *bytes.Buffer, gameTree *GameTree, format SgfFormat, 
 			// Property values
 			for _, value := range property.Values {
 				buffer.WriteRune('[')
-				buffer.WriteString(value)
+				escapedBackslash := strings.Replace(value, "\\", "\\\\", -1)
+				escaped := strings.Replace(escapedBackslash, "]", "\\]", -1)
+				buffer.WriteString(escaped)
 				buffer.WriteRune(']')
 			}
 		}

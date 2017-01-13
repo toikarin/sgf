@@ -50,6 +50,7 @@ func TestSgf(t *testing.T) {
 		{"(;FF[4]GM[1])", "", NoNewLinesSgfFormat},
 		{"(;FF[4];GM[1](;PB[Black]))", "", NoNewLinesSgfFormat},
 		{"(;FF[4]\n ;GM[1]\n    (;PB[Black]\n     ;PW[White]))", "", DefaultSgfFormat},
+		{"(;FF[4]GM[1]C[username [rank\\]: \\\\o])", "", DefaultSgfFormat},
 	}
 
 	for _, test := range okTests {
