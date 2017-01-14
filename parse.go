@@ -100,7 +100,9 @@ func lexicalAnalysis(data string) ([]lexeme, error) {
 					curData = ""
 					escapedText = false
 				} else {
-					curData += string(c)
+					if !escapedText || (c != '\n' && c != '\r') {
+						curData += string(c)
+					}
 					escapedText = false
 				}
 			}
